@@ -68,6 +68,9 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").each(function() {
       toppingsInput.push($(this).val())
     });
+    let newOrder = new PizzaOrder(sizeInput, toppingsInput);
+    newOrder.calcPrice();
+    $(".output").html(`<p class="price">Your pizza will cost you $${newOrder.price}</p>`)
   });
 });
 
