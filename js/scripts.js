@@ -1,53 +1,20 @@
 //Describe: PizzaOrder() 
-//Test: should create a pizza order object with property size equal to size parameter, price set to 0 and all toppings set to false.
+//Test: should create a pizza order object with property size equal to size parameter and price set to 0
 //Code: let newOrder = new PizzaOrder("large");
 //Expect: newOrder.size.toEqual("large");
 
-function PizzaOrder(size) {
+//Test: should create a pizza order object with property toppings equal to an array passed in toppings parameter
+//Code: let newOrder = new PizzaOrder("large", ["cheese", "pepperoni"])
+//Expect: newOrder.toppings.toEqual(["cheese", "pepperoni"])
+
+function PizzaOrder(size, toppings) {
   this.size = size;
-  this.cheese = false;
-  this.pepperoni = false;
-  this.mushrooms = false;
+  this.toppings = toppings;
   this.price = 0;
 } 
 
-let myPizza = new PizzaOrder();
-
-//Describe: addCheese() 
-//Test: should set value of cheese property to true in a PizzaOrder object
-//Code: let newOrder = new PizzaOrder();
-//Code: let newCheeseOrder = newOrder.addCheese()
-//Expect: newCheeseOrder.cheese.toEqual("true");
-
-PizzaOrder.prototype.addCheese = function() {
-  this.cheese = true
-}
-
-myPizza.addCheese();
-myPizza.cheese
-
-//Describe: addPep() 
-//Test: should set value of pepperoni property to true in a PizzaOrder object
-//Code: let newOrder = new PizzaOrder();
-//Code: let newPepOrder = newOrder.addPep()
-//Expect: newPepOrder.pepperoni.toEqual("true");
-
-PizzaOrder.prototype.addPep = function() {
-  this.pepperoni = true
-}
-
-myPizza.addPep();
-myPizza.pepperoni
-
-//Describe: addMush() 
-//Test: should set value of mushrooms property to true in a PizzaOrder object
-//Code: let newOrder = new PizzaOrder();
-//Code: let newMushOrder = newOrder.addCheese()
-//Expect: newMushOrder.mushrooms.toEqual("true");
-
-PizzaOrder.prototype.addMush = function() {
-  this.mushrooms = true
-}
+let newPizza = new PizzaOrder("large", ["cheese", "pepperoni"])
+console.log(newPizza.toppings)
 
 //Describe: calcPrice()
 //Test: should set PizzaOrder.price to 16 if pizza size is large
@@ -60,23 +27,23 @@ PizzaOrder.prototype.addMush = function() {
 //Code: let orderPrice = newOrder.calcPrice()
 //Expect: orderPrice.price.toEqual(10) 
 
-//Test: should add 1 to price property if PizzaOrder.cheese = true
+//Test: should add 1 to price if PizzaOrder.toppings includes cheese
 //Code: let newOrder = new PizzaOrder(small)
-//Code: let newOrder.cheese = true
+//Code: let newOrder.toppings = ["cheese"]
 //Code: let newOrderPrice = newOrder.calcPrice()
 //Expect: newOrderPrice.price.toEqual(11)
 
-//Test: should add 3 to price property if PizzaOrder.pepperoni= true
+//Test: should add 3 to price property if PizzaOrder.toppings includes pepperoni
 //Code: let newOrder = new PizzaOrder(small)
-//Code: let newOrder.pepperoni = true
+//Code: let newOrder.toppings = ["cheese", "pepperoni"]
 //Code: let newOrderPrice = newOrder.calcPrice()
-//Expect: newOrderPrice.price.toEqual(13)
+//Expect: newOrderPrice.price.toEqual(14)
 
-//Test: should add 2 to price property if PizzaOrder.m = true
+//Test: should add 2 to price property if PizzaOrder.toppings includes mushrooms
 //Code: let newOrder = newPizzaOrder(small)
-//Code: let newOrder.mushrooms = true
+//Code: let newOrder.toppings = ["cheese", "mushrooms"]
 //Code: let newOrdprice = newOrder.calcPrice()
-//Expect: newOrderPrice.price.toEqual(12)
+//Expect: newOrderPrice.price.toEqual(13)
 
 PizzaOrder.prototype.calcPrice = function() {
   if (this.size === "large") {
@@ -84,27 +51,15 @@ PizzaOrder.prototype.calcPrice = function() {
   }
   else if (this.size ==="small") {
     this.price = 10;
-  } if (this.cheese === true) {
+  } if (this.toppings.includes("cheese")) {
     this.price += 1
-  } if (this.pepperoni === true) {
+  } if (this.toppings.includes("pepperoni")) {
     this.price += 3
-  } if (this.mushrooms === true) {
+  } if (this.toppings.includes("mushrooms")) {
     this.price +=2 
   }
 }
 
-let newOrder = new PizzaOrder("large")
-newOrder.calcPrice()
-console.log(newOrder.price)
-
-newOrder.addCheese()
-newOrder.calcPrice()
-console.log(newOrder.price)
-
-newOrder.addPep()
-newOrder.calcPrice()
-console.log(newOrder.price)
-
-newOrder.addMush()
+let newOrder = new PizzaOrder("large", ["cheese", "mushrooms", "pepperoni"])
 newOrder.calcPrice()
 console.log(newOrder.price)
