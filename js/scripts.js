@@ -1,3 +1,5 @@
+//Business Logic:
+
 //Describe: PizzaOrder() 
 //Test: should create a pizza order object with property size equal to size parameter and price set to 0
 //Code: let newOrder = new PizzaOrder("large");
@@ -12,9 +14,6 @@ function PizzaOrder(size, toppings) {
   this.toppings = toppings;
   this.price = 0;
 } 
-
-let newPizza = new PizzaOrder("large", ["cheese", "pepperoni"])
-console.log(newPizza.toppings)
 
 //Describe: calcPrice()
 //Test: should set PizzaOrder.price to 16 if pizza size is large
@@ -48,8 +47,7 @@ console.log(newPizza.toppings)
 PizzaOrder.prototype.calcPrice = function() {
   if (this.size === "large") {
     this.price = 16;
-  }
-  else if (this.size ==="small") {
+  } else if (this.size ==="small") {
     this.price = 10;
   } if (this.toppings.includes("cheese")) {
     this.price += 1
@@ -60,6 +58,16 @@ PizzaOrder.prototype.calcPrice = function() {
   }
 }
 
-let newOrder = new PizzaOrder("large", ["cheese", "mushrooms", "pepperoni"])
-newOrder.calcPrice()
-console.log(newOrder.price)
+//UI logic:
+$(document).ready(function() {
+  $("form#order-form").submit(function(event) {
+    event.preventDefault();
+
+    let sizeInput = $("input:radio[name=size]:checked").val();
+    let toppingsInput = []
+    $("input:checkbox[name=toppings]:checked").each(function() {
+      toppingsInput.push($(this).val())
+    });
+  });
+});
+
