@@ -49,10 +49,6 @@ PizzaOrder.prototype.addMush = function() {
   this.mushrooms = true
 }
 
-myPizza.addMush();
-myPizza.mushrooms
-
-
 //Describe: calcPrice()
 //Test: should set PizzaOrder.price to 16 if pizza size is large
 //Code: let newOrder = new PizzaOrder(large);
@@ -82,3 +78,19 @@ myPizza.mushrooms
 //Code: let newOrdprice = newOrder.calcPrice()
 //Expect: newOrderPrice.price.toEqual(12)
 
+PizzaOrder.prototype.calcPrice = function() {
+  if (this.size === "large") {
+    this.price = 16;
+  }
+  else if (this.size ==="small") {
+    this.price = 10;
+  }
+}
+
+let newOrder = new PizzaOrder("small")
+newOrder.calcPrice()
+console.log(newOrder.price)
+
+let newOrder2 = new PizzaOrder("large")
+newOrder2.calcPrice()
+console.log(newOrder2.price)
