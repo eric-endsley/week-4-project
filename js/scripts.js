@@ -84,13 +84,27 @@ PizzaOrder.prototype.calcPrice = function() {
   }
   else if (this.size ==="small") {
     this.price = 10;
+  } if (this.cheese === true) {
+    this.price += 1
+  } if (this.pepperoni === true) {
+    this.price += 3
+  } if (this.mushrooms === true) {
+    this.price +=2 
   }
 }
 
-let newOrder = new PizzaOrder("small")
+let newOrder = new PizzaOrder("large")
 newOrder.calcPrice()
 console.log(newOrder.price)
 
-let newOrder2 = new PizzaOrder("large")
-newOrder2.calcPrice()
-console.log(newOrder2.price)
+newOrder.addCheese()
+newOrder.calcPrice()
+console.log(newOrder.price)
+
+newOrder.addPep()
+newOrder.calcPrice()
+console.log(newOrder.price)
+
+newOrder.addMush()
+newOrder.calcPrice()
+console.log(newOrder.price)
