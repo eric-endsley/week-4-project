@@ -3,5 +3,11 @@
 }
 
 h3 {
-  font-size: xx-small
+  font-size: xx-small;
+}
+
+.output {
+  text-align: right;
+  color: green;
+  margin-top: 20px;
 }

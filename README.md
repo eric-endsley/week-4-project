@@ -52,6 +52,12 @@ Expect: newOrderPrice.price.toEqual(13);
 | Pizza Order Constructor |||
 | should create a pizza order object with property size equal to size parameter and price set to 0| "large" | PizzaOrder {size: "large", ... price: 0 } |
 | should create a pizza order object with property toppings equal to an array passed in the toppings parameter | "large", "["cheese", "pepperoni"] | PizzaOrder {size: "large", toppings: Array(2), price: 0} |
+| Pizza Price Calculator Prototype |||
+| should set PizzaOrder.price to 16 if pizza size is large | PizzaOrder("large") | PizzaOrder {size: "large", ... price: 16} |
+| should set PizzaOrder.price to 10 if pizza size is small | PizzaOrder("small") | PizzaOrder {size: "small", ... price: 10} |
+| should add 1 to price if PizzaOrder.toppings includes cheese | PizzaOrder("small", ["cheese"]) | PizzaOrder {size: "small", Array(1) price: 11} |
+| should add 3 to price property if PizzaOrder.toppings includes pepperoni | PizzaOrder("small", ["cheese", "pepperoni"]) | PizzaOrder {size: "small", Array(2) price: 14} |
+| should add 2 to price property if PizzaOrder.toppings includes mushrooms | PizzaOrder("small", ["cheese", "mushrooms"]) | PizzaOrder {size: "small", Array(2) price: 13} |
 
 
 ## Setup

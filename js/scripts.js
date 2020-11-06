@@ -6,7 +6,7 @@ function PizzaOrder(size, toppings) {
 } 
 
 PizzaOrder.prototype.calcPrice = function() {
-  if (this.size === "large") {
+    if (this.size === "large") {
     this.price = 16;
   } else if (this.size ==="small") {
     this.price = 10;
@@ -15,7 +15,7 @@ PizzaOrder.prototype.calcPrice = function() {
   } if (this.toppings.includes("pepperoni")) {
     this.price += 3
   } if (this.toppings.includes("mushrooms")) {
-    this.price +=2 
+    this.price += 2 
   }
 }
 
