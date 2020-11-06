@@ -15,19 +15,42 @@
   <body>
     <div class="container">
       <form id="order-form">
-        <div class="form-group col-6"></div>
-          <p>Pick a Pizza Size</p>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="small">
-              Small (2")
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="size" value="large">
+        <div class="row">
+          <div class="form-group size col-4">
+            <p>Pick a Pizza Size</p>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="small">
+                Small (2")
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="large">
                 Large (2')
-            </label>
+              </label>
+            </div>
+          </div> 
+          <div class= "form-group toppings col-4">
+            <p>Select your toppings</p>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="toppings" value="cheese">
+                Cheese
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="toppings" value="pepperoni">
+                Pepperoni
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="toppings" value="cheese">
+                Mushrooms
+              </label>
+            </div>
           </div>
         </div>
       </form>
