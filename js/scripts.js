@@ -25,3 +25,29 @@ PizzaOrder.prototype.addCheese = function() {
 
 myPizza.addCheese();
 myPizza.cheese
+
+//Describe: addPep() 
+//Test: should set value of pepperoni property to true in a PizzaOrder object
+//Code: let newOrder = new PizzaOrder();
+//Code: let newPepOrder = newOrder.addPep
+//Expect: newPepOrder.pepperoni.toEqual("true");
+
+PizzaOrder.prototype.addPep = function() {
+  this.pepperoni = true
+}
+
+myPizza.addCheese();
+myPizza.cheese
+
+//Describe: addMush() 
+//Test: should set value of mushrooms property to true in a PizzaOrder object
+//Code: let newOrder = new PizzaOrder();
+//Code: let newMushOrder = newOrder.addCheese
+//Expect: newMushOrder.musshrooms.toEqual("true");
+
+PizzaOrder.prototype.addMush = function() {
+  this.mushrooms = true
+}
+
+myPizza.addCheese();
+myPizza.cheese
