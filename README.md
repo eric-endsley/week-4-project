@@ -55,7 +55,7 @@ Expect: newOrderPrice.price.toEqual(26);
 | should set PizzaOrder.price to 16 if pizza size is large | PizzaOrder("large") | PizzaOrder {size: "large", ... price: 16} |
 | should set PizzaOrder.price to 10 if pizza size is small | PizzaOrder("small") | PizzaOrder {size: "small", ... price: 10} |
 | should add 3 to price property for each element in array PizzaOrder.toppings | PizzaOrder("small", ["cheese", "pepperoni"]) | PizzaOrder {size: "small", toppings: Array(2), ... price: 16} |
-| should add 5 to price property for each element in array PizzaOrder.fancyToppings | PizzaOrder("small", ["cheese", "pepperoni"], ["unicorn", "bees"]) | PizzaOrder {size: "small", toppings: Array(2), fancyToppings: Array(2,) price: 26} |
+| should add 5 to price property for each element in array PizzaOrder.fancyToppings | PizzaOrder("small", ["cheese", "pepperoni"], ["unicorn", "bees"]) | PizzaOrder {size: "small", toppings: Array(2), fancyToppings: Array(2), price: 26} |
 
 
 
@@ -80,5 +80,4 @@ None
 To ask questions or report a bug, contact [Eric Endsley](mailto:eric.endsley4@gmail.com)
 
 ## Legal
-
 This software is licensed under the MIT license.

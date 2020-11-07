@@ -7,13 +7,13 @@ function PizzaOrder(size, toppings, fancyToppings) {
 } 
 
 PizzaOrder.prototype.calcPrice = function() {
-    if (this.size === "large") {
+  if (this.size === "large") {
     this.price = 16;
   } else if (this.size ==="small") {
     this.price = 10;
   } 
-  this.price += 3 * (this.toppings).length;
-  this.price += 5 * (this.fancyToppings).length;
+  this.price += 3 * this.toppings.length;
+  this.price += 5 * this.fancyToppings.length;
 }
 
 //UI logic:
